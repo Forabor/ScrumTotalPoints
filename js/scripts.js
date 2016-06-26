@@ -2,7 +2,6 @@ $(document).ready(function () {
 
     //add image
     //var imgURL = "url(" + chrome.extension.getURL("/images/storypoints-icon.png") + ")";
-    // lol
 
     //add styles
     //document.styleSheets[0].addRule('.js-list-members .member::after','background-image: ' + imgURL);
