@@ -15,7 +15,8 @@ $(document).ready(function () {
         //iterate over each card within list "This Week"
         $(".list-card-details", thisWeek).each(function () {
 
-            var thisCardPoints = parseInt($(this).find('.badge-points').text());
+            var thisCardPoints = parseFloat($(this).find('.badge-points').text());
+            console.log(thisCardPoints);
 
             if ( isNaN( thisCardPoints ) ) {
                 thisCardPoints = 0;
@@ -85,4 +86,3 @@ $(document).ready(function () {
 
 // TODO Support TeamMembers as well as ListMember
 // TODO Css support for pictures/nonpictures
-// TODO Fix decimals rounding down. ie: 2 + 1.5 = 3
