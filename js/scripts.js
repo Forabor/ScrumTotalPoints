@@ -14,7 +14,13 @@ $(document).ready(function () {
 
         //iterate over each card within list "This Week"
         $(".list-card-details", thisWeek).each(function () {
+
             var thisCardPoints = parseInt($(this).find('.badge-points').text());
+
+            if ( isNaN( thisCardPoints ) ) {
+                thisCardPoints = 0;
+            }
+
             //console.log(thisCardPoints);
 
             //iterate through each user associated with current card
@@ -45,18 +51,31 @@ $(document).ready(function () {
                 //console.log(users);
             });
 
-                $(".member", ".js-list-members").each(function(){
-                    var username = $(this).find(">:first-child").attr("title");
-                    var usernameRaw = username.substring(username.indexOf("(") + 1, username.indexOf(")"));
-                    $(this).attr("id", usernameRaw);
-                    if(users[username] !== undefined){
-                        var style = $('<style>.js-list-members .member#'+ usernameRaw + ':after { content: "'+ users[username] +'" }</style>');
-                        $('html > head').append(style);
-                    } else{
-                        var style = $('<style>.js-list-members .member#'+ usernameRaw + ':after { content: "0" }</style>');
-                        $('html > head').append(style);
-                    }
-                })
+            $(".member", ".js-list-members").each(function(){
+                var username = $(this).find(">:first-child").attr("title");
+                var usernameRaw = username.substring(username.indexOf("(") + 1, username.indexOf(")"));
+                $(this).attr("id", usernameRaw);
+                if(users[username] !== undefined){
+                    var style = $('<style>.js-list-members .member#'+ usernameRaw + ':after { content: "'+ users[username] +'" }</style>');
+                    $('html > head').append(style);
+                } else{
+                    var style = $('<style>.js-list-members .member#'+ usernameRaw + ':after { content: "0" }</style>');
+                    $('html > head').append(style);
+                }
+            });
+
+            $(".member", ".js-list-team-members").each(function(){
+                var username = $(this).find(">:first-child").attr("title");
+                var usernameRaw = username.substring(username.indexOf("(") + 1, username.indexOf(")"));
+                $(this).attr("id", usernameRaw);
+                if(users[username] !== undefined){
+                    var style = $('<style>.js-list-team-members .member#'+ usernameRaw + ':after { content: "'+ users[username] +'" }</style>');
+                    $('html > head').append(style);
+                } else{
+                    var style = $('<style>.js-list-team-members .member#'+ usernameRaw + ':after { content: "0" }</style>');
+                    $('html > head').append(style);
+                }
+            });
 
         });
     }, 1500);
@@ -66,4 +85,4 @@ $(document).ready(function () {
 
 // TODO Support TeamMembers as well as ListMember
 // TODO Css support for pictures/nonpictures
-// TODO Make everything prettier
+// TODO Fix decimals rounding down. ie: 2 + 1.5 = 3
