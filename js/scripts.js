@@ -6,6 +6,8 @@ $(document).ready(function () {
     //add styles
     //document.styleSheets[0].addRule('.js-list-members .member::after','background-image: ' + imgURL);
     document.styleSheets[0].addRule('.js-list-members .member .member-initials', 'position: relative');
+    document.styleSheets[0].addRule('.js-list-team-members .member .member-initials', 'position: relative');
+
 
     //dowork
     var waitASec = setInterval(function () {
@@ -16,7 +18,6 @@ $(document).ready(function () {
         $(".list-card-details", thisWeek).each(function () {
 
             var thisCardPoints = parseFloat($(this).find('.badge-points').text());
-            console.log(thisCardPoints);
 
             if ( isNaN( thisCardPoints ) ) {
                 thisCardPoints = 0;
@@ -85,4 +86,3 @@ $(document).ready(function () {
 });
 
 // TODO Support TeamMembers as well as ListMember
-// TODO Css support for pictures/nonpictures
