@@ -66,3 +66,4 @@ $(document).ready(function () {
 
 // TODO Support TeamMembers as well as ListMember
 // TODO Css support for pictures/nonpictures
+// TODO Make everything prettier
