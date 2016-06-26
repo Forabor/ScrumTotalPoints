@@ -1,0 +1,13 @@
+.js-list-members .member {
+    padding-bottom: 20px;
+    background: #d6dadc;
+}
+.js-list-members .member:after{
+    color: #333;
+    padding-left: 10px;
+    position: relative;
+    bottom: 4px;
+    font-family: "Helvetica Neue",Arial,Helvetica,sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}

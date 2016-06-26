@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "ScrumTotalPoints",
+  "description": "This extension allows you to see the total Scrum points-per-person-per-list",
+  "version": "0.1",
+  "icons": {
+
+  },
+  "permissions": [
+    "activeTab",
+    "tabs"
+  ],
+  "content_scripts": [{
+    "matches": ["https://trello.com/b/*"],
+    "css": ["styles/main.css"],
+    "js": ["js/jquery.min.js", "js/scripts.js"]
+  }]
+}
